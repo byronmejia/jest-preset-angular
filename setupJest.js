@@ -2,7 +2,10 @@
 
 require('core-js/es6/reflect');
 require('core-js/es7/reflect');
-require('zone.js/dist/zone.js');
+const htmlEl = window['HTMLElement'];
+window['HTMLElement'] = undefined;
+require('zone.js/dist/zone-node.js');
+window['HTMLElement'] = htmlEl;
 require('zone.js/dist/proxy.js');
 require('zone.js/dist/sync-test');
 require('zone.js/dist/async-test');
